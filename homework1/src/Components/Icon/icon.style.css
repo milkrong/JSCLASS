@@ -1,0 +1,8 @@
+.icon {
+    border: 1px solid red;
+    border-radius: 18px;
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    position: relative;
+}

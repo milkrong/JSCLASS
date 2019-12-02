@@ -1,0 +1,10 @@
+.foot {
+    display: flex;
+    position: relative;
+    width: 560px;
+    margin: 0 auto;
+    padding: 0;
+    flex-direction: row;
+    justify-content: space-around;
+    border-top: 5px solid red;
+}
