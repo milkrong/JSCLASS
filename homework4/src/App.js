@@ -1,18 +1,10 @@
 import React from 'react';
 import { UserList } from './Components/UserList/userList.component';
 import { UserDetail } from './Components/UserDetail/userDetail.component';
+import { Loading } from './Components/Loading/loading.component';
+import { ErrorPanel } from './Components/ErrorPanel/errorPanel.component';
 import axios from 'axios';
 import './App.css';
-
-const ErrorNotice = (props) => {
-  return (
-    <div className="error">
-      <p>
-        {props.errMessage}
-      </p>
-    </div>
-  )
-}
 
 class App extends React.Component {
   constructor() {
@@ -21,6 +13,7 @@ class App extends React.Component {
       data: [],
       errMessage: "",
       showDetail: false,
+      loading: true,
       userData: {}
     }
   }
@@ -37,17 +30,38 @@ class App extends React.Component {
   }
 
   render () {
-    
+    let main = null;
+    let error = null
+    if (this.state.loading) {
+      main = (
+        <div className="col-4 col-m-6 col-s-12">
+          <Loading/>
+        </div>
+      )
+    } else {
+      main = (
+        <div className="col-4 col-m-6 col-s-12">
+          <UserList data={this.state.data} handleClick={this.handleClick} />
+        </div>
+      )
+    }
+
+    if (this.state.errMessage.length > 0) {
+      error = (
+        <div className="col-12">
+          <ErrorPanel message={this.state.errMessage} />
+        </div>
+      )
+    } else {
+      error = (
+        <p></p>
+      )
+    }
     return (
       <div className="App">
-        <ErrorNotice 
-          className={this.state.errMessage.length > 0 ? "visible" : "invisible"} 
-          errMessage={this.state.errMessage}
-        />
+        {error}
         <div className="container justify-center">
-          <div className="col-4 col-m-6 col-s-12">
-            <UserList data={this.state.data} handleClick={this.handleClick} />
-          </div>
+          {main}
           <div className="col-8 col-m-6 col-s-12">
             <UserDetail show={this.state.showDetail} userData={this.state.userData} />
           </div>
@@ -59,10 +73,10 @@ class App extends React.Component {
   componentDidMount() {
     axios({method: "get", url:"https://api.github.com/users?per_page=100"})
       .then(res => {
-        this.setState({data: res.data})
+        this.setState({loading: false, data: res.data})
       })
       .catch(err => {
-        this.setState({errMessage: err})
+        this.setState({errMessage: "Network Error"})
       })
   }
 }

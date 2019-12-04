@@ -18,6 +18,10 @@
   width: 66.6%;
 }
 
+.col-12 {
+  width: 100%;
+}
+
 .invisible {
   display: none;
 }
