@@ -1,0 +1,13 @@
+.user-detail {
+    margin: 0 20px;
+}
+
+.detail-content {
+    padding: 10px, 10px;
+    width: 100%;
+    border: 2px solid grey;
+}
+
+.detail-content li {
+    margin: 10px 0;
+}

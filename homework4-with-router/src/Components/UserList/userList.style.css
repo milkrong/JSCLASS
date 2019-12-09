@@ -1,0 +1,25 @@
+.user-list {
+    margin: 0 20px;
+    align-content: center;
+    text-align: center;
+}
+
+.scroll-table {
+    border: 1px solid grey;
+    height: 800px;
+    overflow-y: scroll;
+}
+
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 15px 15%;
+}
+
+@media only screen and (max-width: 480px) {
+    .scroll-table {
+        border: 1px solid grey;
+        height: 600px;
+        overflow-y: scroll;
+    }
+  }
