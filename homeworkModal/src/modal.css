@@ -1,0 +1,85 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0vh;
+    background-color: transparent;
+    overflow: hidden;
+    transition: background-color 0.25s ease;
+    z-index: 9999;
+}
+
+.modal.open {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.25s;
+}
+.modal.open > .wrapper {
+  transform: scale(1);
+}
+
+.modal .wrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 2.5rem;
+  background-color: white;
+  border-radius: 0.3125rem;
+  box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+  transition: transform 0.25s;
+  transition-delay: 0.15s;
+}
+
+.modal .header {
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid lightgrey;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 1.25rem;
+}
+
+.header i {
+  float: right;
+  cursor: pointer;
+}
+
+.modal .content {
+  position: relative;
+  display: flex;
+  font-size: 0.875rem;
+  line-height: 1.75;
+}
+
+.modal .footer {
+  border-top: 1px solid lightgrey;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 0;
+  padding: 1.875rem 0 0;
+}
+
+.footer button {
+  padding: 0.7em 1.4em;
+  margin: 0.3em 0.3em 0;
+  font-weight: 400;
+  border-radius: 0.15em;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #3369ff;
+}

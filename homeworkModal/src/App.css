@@ -1,0 +1,14 @@
+button {
+    cursor: pointer;
+  }
+
+.toggle-button {
+margin: 0 0.75rem;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.12), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.24);
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  font-size: 0.875rem;
+  font-weight: 300;
+}
