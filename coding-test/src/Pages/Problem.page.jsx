@@ -7,19 +7,24 @@ class ProblemPage extends React.Component {
         this.state = {
             question: null,
             errMessage: '',
-            answer: '',
+            answer: false,
             result: ''
         };
     }
 
     handleInput = e => {
-        this.setState({answer: e.target.value});
+        this.setState({answer: e.target.value === "true"});
     }
 
     handleSubmit = () => {
         axios.post(`http://api.haochuan.io/oj/problems/${this.props.match.params.problemId}/solution`,
             {
                 answer: this.state.answer
+            },
+            {
+                headers: {
+                  "Content-Type": "application/json"
+                }
             }
         )
             .then(res => {
