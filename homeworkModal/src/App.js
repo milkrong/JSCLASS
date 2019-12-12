@@ -15,7 +15,11 @@ class App extends Component {
   };
 
   closeModal = () => {
-    this.setState({show:false})
+    this.setState({show:false});
+  }
+
+  closeByOutside = () => {
+    this.setState({show:false});
   }
 
   render() {
