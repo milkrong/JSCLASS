@@ -1,0 +1,22 @@
+.tag {
+    margin: 0 3px;
+    font-size: 18px;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 16px;
+    border: 1px solid #545454;
+    padding: 3px 15px;
+
+    &:hover {
+        background-color: #545454;
+        color: white;
+    }
+    .icon {
+        margin-left: 8px;
+        height: 100%;
+        width: 15px;
+        cursor: pointer;
+    }
+}

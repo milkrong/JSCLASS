@@ -1,4 +1,4 @@
-export const tagReducer = (state=[], action) => {
+const tagReducer = (state=[], action) => {
     switch (action.type) {
         case 'ADD_TAG':
             return [
@@ -11,3 +11,5 @@ export const tagReducer = (state=[], action) => {
             return state;
     }
 }
+
+export default tagReducer;
